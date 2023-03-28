@@ -30,3 +30,5 @@ If running on K8s:
 kubectl create -f pod.yaml
 kubectl logs pocapp
 ```
+
+DON'T FORGET TO OPEN YOUR FIREWALL!!  Easiest thing to do is try running the app once and you'll get a firewall failure error message in it with the node IP address in the error message. You can then just go add that to the firewall exception rules in your SQL DB server.  https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-create-server-level-portal-quickstart?view=azuresql
