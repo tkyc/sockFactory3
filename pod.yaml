@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pocapp
+spec:
+  containers:
+  - name: pocapp
+    image: twrightmsft/pocapp:v1
+    env:
+    - name: DBNAME
+      value: ""
+    - name: USERNAME
+      value: "azureuser"
+    - name: SERVERNAME
+      value: ""
+    - name: PASSWORD
+      value: ""
+    - name: PORT
+      value: "1433"
+    - name: USEFASTACK
+      value: "true" #true/false
