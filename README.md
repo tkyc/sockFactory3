@@ -56,5 +56,5 @@ kubectl logs pocapp
  * Run the following command to start the container and connect the app to the Azure SQL DB:
 
 ```terminal
-docker run -it -e DBNAME=dhlreprodb -e SERVERNAME=dhlrepro -e USERNAME=dhlrepro -e PASSWORD=Passw0rD1234 -e PORT=1433 -e USEFASTACK=false twrightmsft/pocapp:v1
+sudo docker run -it -e DBNAME=dhlreprodb -e SERVERNAME=dhlrepro -e USERNAME=dhlrepro -e PASSWORD=Passw0rD1234 -e PORT=1433 -e USEFASTACK=false twrightmsft/pocapp:v1
  ```
