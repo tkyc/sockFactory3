@@ -10,13 +10,13 @@ spec:
     #image: a9d593e2/sockerfactory3-jovan:v1.4 #Similar to customer env
     env:
     - name: DBNAME
-      value: "twright-DHL-REPRO-db"
+      value: ""
     - name: USERNAME
-      value: "dhlrepro"
+      value: "azureuser"
     - name: SERVERNAME
-      value: "twright-dhl-repro-server"
+      value: ""
     - name: PASSWORD
-      value: "2HrrUJk6VjcFqVmmVokx"
+      value: ""
     - name: PORT
       value: "1433"
     - name: USEFASTACK
