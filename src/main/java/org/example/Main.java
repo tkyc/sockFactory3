@@ -12,7 +12,7 @@ public class Main {
             String dbname = System.getenv("DBNAME");
             String port = System.getenv("PORT");
             String usefastack = System.getenv("USEFASTACK");
-            
+
             System.out.println(NewSocketFactory.class.getName());
             String connectionUrl = "jdbc:sqlserver://" + servername + ".database.windows.net" + ":" + port + ";database=" + dbname + ";user=" + username + "@" + servername + ";password=" + password + ";encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30";
             if(usefastack.compareToIgnoreCase("true") == 0) {
@@ -24,7 +24,11 @@ public class Main {
                 Statement statement = connection.createStatement();)
             {
                 // Create and execute a SELECT SQL statement.
-                String selectSql = "SELECT TOP 3 Title, FirstName, LastName from SalesLT.Customer";
+                //Adventure Works
+                //String selectSql = "SELECT TOP 3 Title, FirstName, LastName from SalesLT.Customer";
+                
+                //Table that better represents the customer environment
+                String selectSql = "SELECT * FROM TABLE4KB WHERE ID < 200";
                 
                 int i = 0;
                 while(i < 5)

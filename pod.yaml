@@ -5,17 +5,19 @@ metadata:
 spec:
   containers:
   - name: pocapp
-    image: twrightmsft/pocapp:v1
+    #image: twrightmsft/pocapp:v1 #Adventure Works
+    image: twrightmsft/pocapp:v2 #4k table similar to customer env
+    #image: a9d593e2/sockerfactory3-jovan:v1.4 #Similar to customer env
     env:
     - name: DBNAME
-      value: ""
+      value: "twright-DHL-REPRO-db"
     - name: USERNAME
-      value: "azureuser"
+      value: "dhlrepro"
     - name: SERVERNAME
-      value: ""
+      value: "twright-dhl-repro-server"
     - name: PASSWORD
-      value: ""
+      value: "2HrrUJk6VjcFqVmmVokx"
     - name: PORT
       value: "1433"
     - name: USEFASTACK
-      value: "true" #true/false
+      value: "false" #true/false
