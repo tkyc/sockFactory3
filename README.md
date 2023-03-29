@@ -14,11 +14,12 @@ DON'T FORGET TO OPEN YOUR FIREWALL!!  Easiest thing to do is try running the app
 ## Deployment
 
 ### Kubernetes
+
 You can deploy to K8s by using `pod.yaml` (`kubectl create -f pod.yaml`).
 When you deploy the pod, you need to edit the pod.yaml file to specify the env vars of the SQL DB to connect to.  The app assumes SQL DB in Azure (i.e. `<someservername>.database.windows.net`).
 Example:
 
-```
+```terminal
     env:
     - name: DBNAME
       value: "domedbname"
@@ -43,16 +44,16 @@ kubectl create -f pod.yaml
 kubectl logs pocapp
 ```
 
-### On a standalone VM using Docker container:
+### On a standalone VM using Docker container
 
- -Deploy VM (Ubuntu 22.04 for example)
- -[Install docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
- -Install Azure CLI (`curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`)
- -Install git (sudo apt install git) if it isn't installed already.
- -Git clone this repo: `git clone https://github.com/twright-msft/sockFactory3.git`
- -Switch to main branch: `git checkout main`
- -Deploy the Azure SQL DB by editing the variables in the setup-sql-db.sh file and running it, especially the client IP address that needs to be added to the firewall allow list. *Change the password and other parameters if you want, but be sure to also change the to match in the `docker run` command below as well.*
- -Run the following command to start the container and connect the app to the Azure SQL DB:
+* Deploy VM (Ubuntu 22.04 for example)
+* [Install docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+* Install Azure CLI (`curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`)
+* Install git (sudo apt install git) if it isn't installed already.
+* Git clone this repo: `git clone https://github.com/twright-msft/sockFactory3.git`
+* Switch to main branch: `git checkout main`
+* Deploy the Azure SQL DB by editing the variables in the setup-sql-db.sh file and running it, especially the client IP address that needs to be added to the firewall allow list. **Change the password and other parameters if you want, but be sure to also change the to match in the `docker run` command below as well.**
+ * Run the following command to start the container and connect the app to the Azure SQL DB:
 
 ```terminal
 docker run -it -e DBNAME=dhlreprodb -e SERVERNAME=dhlrepro -e USERNAME=dhlrepro -e PASSWORD=Passw0rD1234 -e PORT=1433 -e USEFASTACK=false twrightmsft/pocapp:v1
